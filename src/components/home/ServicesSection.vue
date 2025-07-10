@@ -1,4 +1,3 @@
-<!-- src/components/home/ServicesSection.vue -->
 <script setup>
 import { computed, ref } from 'vue'
 
@@ -19,7 +18,6 @@ const services = ref([
       'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop',
     description: 'Biarkan kisah cinta Anda abadi dalam setiap bingkai yang kami tangkap.',
   },
-
   {
     id: 'svc-03',
     name: 'GRADUATION',
@@ -115,10 +113,10 @@ const formatCurrency = (value) => {
               v-for="(service, index) in services"
               :key="service.id"
               @mouseover="setActiveService(index)"
-              class="group border-b border-gray-700 transition-colors hover:bg-gray-900 flex-grow flex"
+              @click="setActiveService(index)"
+              class="group border-b border-gray-700 transition-colors hover:bg-gray-900 flex-grow flex cursor-pointer"
             >
-              <a
-                href="#"
+              <div
                 class="flex justify-between items-center p-6 text-2xl lg:text-3xl font-semibold w-full"
               >
                 <div class="flex items-center">
@@ -126,12 +124,17 @@ const formatCurrency = (value) => {
                     class="overflow-hidden inline-block w-0 opacity-0 group-hover:w-8 group-hover:mr-4 group-hover:opacity-100 transition-all duration-300 text-brand-accent-gold"
                     >—</span
                   >
-                  <span class="transition-colors group-hover:text-brand-accent-gold">{{
-                    service.name
-                  }}</span>
+                  <span
+                    :class="{
+                      'text-brand-accent-gold': index === activeServiceIndex,
+                      'transition-colors': true,
+                    }"
+                  >
+                    {{ service.name }}
+                  </span>
                 </div>
                 <span class="text-xl text-gray-500">0{{ index + 1 }}</span>
-              </a>
+              </div>
             </li>
           </ul>
         </div>
