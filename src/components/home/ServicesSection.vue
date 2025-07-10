@@ -4,14 +4,6 @@ import { computed, ref } from 'vue'
 
 const services = ref([
   {
-    id: 'svc-01',
-    name: 'WEDDING',
-    basePrice: 999999,
-    imageUrl:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop',
-    description: 'Biarkan kisah cinta Anda abadi dalam setiap bingkai yang kami tangkap.',
-  },
-  {
     id: 'svc-02',
     name: 'SELF FOTO',
     basePrice: 30000,
@@ -19,6 +11,15 @@ const services = ref([
       'https://i0.wp.com/images.squarespace-cdn.com/content/v1/6270a99b1201930f133cd56a/2b9d6be1-e8a8-4a6a-82a0-0f0283785fcb/DSC00423.JPG?w=720&ssl=1',
     description: 'Ekspresikan diri Anda sebebas mungkin di studio pribadi kami.',
   },
+  {
+    id: 'svc-01',
+    name: 'WEDDING',
+    basePrice: 999999,
+    imageUrl:
+      'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2940&auto=format&fit=crop',
+    description: 'Biarkan kisah cinta Anda abadi dalam setiap bingkai yang kami tangkap.',
+  },
+
   {
     id: 'svc-03',
     name: 'GRADUATION',

@@ -5,23 +5,24 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Kolom Kiri: Teks Deskripsi -->
         <div class="text-left">
-          <p class="text-sm font-semibold tracking-widest text-brand-dark-blue uppercase">
-            ADIWARNA STUDIO.
-          </p>
-          <h2 class="text-4xl lg:text-5xl font-bold text-brand-dark-blue mt-4 leading-tight">
+          <p class="text-sm font-semibold tracking-widest text-black uppercase">ADIWARNA STUDIO.</p>
+          <h2 class="text-4xl lg:text-5xl font-bold text-black mt-4 leading-tight">
             KAMI MENGABADIKAN<br />
             — KENANGAN PALING<br />
             BERHARGA ANDA
           </h2>
-          <p class="mt-6 text-gray-600 max-w-lg">
+          <p class="mt-6 text-black max-w-lg">
             Setiap foto yang kami ambil adalah bagian penting dari kisah hidup Anda. Biarkan kami
             membantu menceritakan kisah itu dengan cara yang indah dan penuh makna, menangkap setiap
             momen berharga yang akan selalu Anda ingat.
           </p>
-          <a href="#" class="inline-flex items-center mt-8 font-bold text-brand-dark-blue group">
-            <span>TENTANG KAMI</span>
+          <a
+            href="#"
+            class="inline-flex items-center mt-8 font-bold text-yellow-500 border-b-2 border-black group transition-all"
+          >
+            <span class="text-black">TENTANG KAMI</span>
             <svg
-              class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2"
+              class="w-5 h-5 ml-2 text-yellow-500 transition-transform duration-300 group-hover:translate-x-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

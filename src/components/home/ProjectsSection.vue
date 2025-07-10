@@ -57,7 +57,7 @@
             <img
               :src="project.image"
               :alt="project.title"
-              class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition duration-500"
+              class="w-full h-[400px] object-cover transform transition duration-500 group-hover:scale-105 group-hover:brightness-110"
             />
           </div>
           <div class="mt-4 flex justify-between items-start">
