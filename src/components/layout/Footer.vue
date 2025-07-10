@@ -22,39 +22,43 @@
         <div
           class="flex flex-col items-center md:flex-row md:items-start justify-between gap-6 text-center md:text-left"
         >
-          <h2 class="text-3xl md:text-4xl font-semibold italic max-w-lg leading-snug">
-            “SETIAP MOMEN — <br class="md:hidden" />
+          <h2
+            class="text-3xl md:text-4xl font-semibold italic max-w-lg leading-snug mx-auto md:mx-0 text-center md:text-left"
+          >
+            “SETIAP MOMEN — <br />
             PENUH MAKNA.”
           </h2>
           <div class="max-w-xl text-sm md:text-base space-y-4">
-            <p class="hidden md:block">
+            <p class="hidden md:block text-center">
               Setiap detil dalam hidupmu layak untuk diabadikan. Kami percaya bahwa setiap momen,
               sekecil apapun, memiliki cerita yang ingin dikenang. Mari bersama-sama menciptakan
               foto-foto yang tak hanya indah, tetapi juga bermakna.
             </p>
-            <a
-              href="#"
-              class="inline-flex items-center gap-2 px-6 py-2 text-white uppercase tracking-wide font-semibold group transition"
-            >
-              <span
-                class="inline-flex items-center gap-2 border-b border-white group-hover:border-transparent transition"
+            <div class="flex justify-center">
+              <a
+                href="#"
+                class="inline-flex gap-2 px-6 py-2 text-white uppercase tracking-wide font-semibold group transition justify-center"
               >
-                BOOK NOW
-                <svg
-                  class="w-4 h-4 text-brand-accent-gold"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <span
+                  class="inline-flex items-center gap-2 border-b border-white group-hover:border-transparent transition"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </span>
-            </a>
+                  BOOK NOW
+                  <svg
+                    class="w-4 h-4 text-brand-accent-gold"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
