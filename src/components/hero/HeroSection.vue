@@ -1,4 +1,3 @@
-<!-- src/components/hero/HeroSection.vue -->
 <script setup>
 import { useHeroStore } from '@/stores/heroStore'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
@@ -7,14 +6,17 @@ const heroStore = useHeroStore()
 let slideInterval = null
 
 const currentIndex = ref(0)
+const itemsPerSlide = ref(3) // default desktop 3
 
+// Hitung total steps sesuai itemsPerSlide
 const totalSteps = computed(() => {
-  if (!heroStore.heroes || heroStore.heroes.length <= 3) return 0
-  return heroStore.heroes.length - 3
+  if (!heroStore.heroes || heroStore.heroes.length <= itemsPerSlide.value) return 0
+  return heroStore.heroes.length - itemsPerSlide.value
 })
 
+// Hitung carousel translate berdasarkan currentIndex dan itemsPerSlide
 const carouselStyle = computed(() => ({
-  transform: `translateX(-${currentIndex.value * (100 / 3)}%)`,
+  transform: `translateX(-${currentIndex.value * (100 / itemsPerSlide.value)}%)`,
 }))
 
 const nextSlide = () => {
@@ -29,15 +31,24 @@ function goToStep(index) {
   currentIndex.value = index
 }
 
+function updateItemsPerSlide() {
+  itemsPerSlide.value = window.innerWidth < 640 ? 1 : 3
+}
+
 onMounted(async () => {
+  updateItemsPerSlide()
+  window.addEventListener('resize', updateItemsPerSlide)
+
   await heroStore.fetchHeroes()
-  if (heroStore.heroes.length > 3) {
+
+  if (heroStore.heroes.length > itemsPerSlide.value) {
     slideInterval = setInterval(nextSlide, 3000)
   }
 })
 
 onUnmounted(() => {
   clearInterval(slideInterval)
+  window.removeEventListener('resize', updateItemsPerSlide)
 })
 </script>
 
@@ -47,7 +58,7 @@ onUnmounted(() => {
       <div
         v-for="hero in heroStore.heroes"
         :key="hero.id"
-        class="relative h-full w-1/3 flex-shrink-0 group"
+        class="relative h-full w-full sm:w-1/3 flex-shrink-0 group"
       >
         <img
           :src="hero.imageUrl"

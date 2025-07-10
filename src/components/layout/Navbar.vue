@@ -2,9 +2,14 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const isScrolled = ref(false)
+const isMenuOpen = ref(false)
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
 }
 
 onMounted(() => {
@@ -21,15 +26,14 @@ onUnmounted(() => {
     :class="isScrolled ? 'bg-black shadow-md' : 'bg-transparent'"
     class="fixed top-0 left-0 w-full z-30 transition-all duration-300"
   >
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
       <!-- Logo -->
       <router-link to="/">
         <img src="@/assets/logo.svg" alt="Adiwarna Studio Logo" class="h-8 w-auto" />
       </router-link>
 
-      <!-- Menu dan Tombol Aksi di Kanan -->
+      <!-- Menu Desktop -->
       <div class="hidden md:flex items-center ml-auto space-x-8">
-        <!-- Menu Navigasi -->
         <nav class="flex items-center space-x-8">
           <router-link to="/" class="nav-link" :class="isScrolled ? 'text-gray-200' : 'text-white'">
             Beranda
@@ -57,7 +61,7 @@ onUnmounted(() => {
           </router-link>
         </nav>
 
-        <!-- Tombol Aksi -->
+        <!-- Tombol Book Now -->
         <router-link
           to="/booking"
           class="book-now-link"
@@ -75,7 +79,48 @@ onUnmounted(() => {
           </svg>
         </router-link>
       </div>
+
+      <!-- Tombol Hamburger -->
+      <button class="md:hidden text-white focus:outline-none" @click="isMenuOpen = !isMenuOpen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
+
+    <!-- Overlay Menu Mobile -->
+    <transition name="fade">
+      <div
+        v-if="isMenuOpen"
+        class="fixed inset-0 z-20 bg-black bg-opacity-90 md:hidden"
+        @click.self="closeMenu"
+      >
+        <div class="flex flex-col space-y-4 px-6 py-6">
+          <router-link to="/" class="nav-link text-white" @click="closeMenu">Beranda</router-link>
+          <router-link to="/about" class="nav-link text-white" @click="closeMenu"
+            >Tentang Kami</router-link
+          >
+          <router-link to="/projects" class="nav-link text-white" @click="closeMenu"
+            >Our Project</router-link
+          >
+          <router-link to="/services" class="nav-link text-white" @click="closeMenu"
+            >Our Services</router-link
+          >
+          <router-link to="/booking" class="book-now-link mt-2 text-white" @click="closeMenu">
+            <span>Book Now</span>
+            <svg
+              class="w-4 h-4 text-brand-accent-gold ml-1"
+              fill="none"
+              viewBox="0 0 20 20"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6l4 4-4 4" />
+            </svg>
+          </router-link>
+        </div>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -86,17 +131,15 @@ onUnmounted(() => {
   transition: color 0.3s;
 }
 
-/* Hover warna emas */
 .nav-link:hover {
   color: #cfaa3b;
 }
 
-/* Underline custom menggunakan ::after */
 .nav-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -2px; /* Jarak underline */
+  bottom: -2px;
   width: 100%;
   height: 2px;
   background-color: transparent;
@@ -107,7 +150,6 @@ onUnmounted(() => {
   background-color: #cfaa3b;
 }
 
-/* Aktif link */
 .router-link-exact-active {
   font-weight: 700;
   color: #cfaa3b !important;
@@ -117,7 +159,6 @@ onUnmounted(() => {
   background-color: #cfaa3b;
 }
 
-/* Book Now link underline menyeluruh */
 .book-now-link {
   position: relative;
   display: inline-flex;
@@ -144,5 +185,15 @@ onUnmounted(() => {
 
 .book-now-link:hover::after {
   background-color: #cfaa3b;
+}
+
+/* Fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

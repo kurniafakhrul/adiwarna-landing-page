@@ -19,13 +19,15 @@
       <div
         class="absolute inset-0 flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto h-full z-20 text-white"
       >
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <h2 class="text-3xl md:text-4xl font-semibold italic max-w-lg leading-snug text-center">
+        <div
+          class="flex flex-col items-center md:flex-row md:items-start justify-between gap-6 text-center md:text-left"
+        >
+          <h2 class="text-3xl md:text-4xl font-semibold italic max-w-lg leading-snug">
             “SETIAP MOMEN — <br class="md:hidden" />
             PENUH MAKNA.”
           </h2>
-          <div class="max-w-xl text-sm md:text-base space-y-4 text-center">
-            <p>
+          <div class="max-w-xl text-sm md:text-base space-y-4">
+            <p class="hidden md:block">
               Setiap detil dalam hidupmu layak untuk diabadikan. Kami percaya bahwa setiap momen,
               sekecil apapun, memiliki cerita yang ingin dikenang. Mari bersama-sama menciptakan
               foto-foto yang tak hanya indah, tetapi juga bermakna.
