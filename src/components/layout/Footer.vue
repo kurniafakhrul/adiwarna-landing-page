@@ -1,59 +1,46 @@
 <template>
   <footer class="bg-black text-white">
-    <!-- CTA Section -->
-
-    <div class="relative text-white h-[350px] overflow-hidden">
-      <!-- Background split: atas putih, bawah hitam -->
-      <div class="absolute inset-0 z-0">
-        <div class="w-full h-1/2 bg-white"></div>
-        <div class="w-full h-1/2 bg-black"></div>
-      </div>
-
-      <!-- Gambar di atas background -->
+    <div class="relative h-[400px] overflow-hidden bg-white">
       <img
-        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1600"
-        alt="Background"
-        class="absolute inset-0 w-full h-full object-cover z-10 p-10"
+        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1600&q=80"
+        alt="Call to action background"
+        class="absolute inset-0 w-full h-full object-cover"
       />
-      <!-- Konten -->
-      <div
-        class="absolute inset-0 flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto h-full z-20 text-white"
-      >
-        <div
-          class="flex flex-col items-center md:flex-row md:items-start justify-between gap-6 text-center md:text-left"
-        >
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div class="container mx-auto px-6 relative z-10 flex h-full items-center">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 w-full">
           <h2
-            class="text-3xl md:text-4xl font-semibold italic max-w-lg leading-snug mx-auto md:mx-0 text-center md:text-left"
+            class="text-3xl md:text-4xl font-semibold italic max-w-md leading-snug text-center md:text-left"
           >
             “SETIAP MOMEN — <br />
             PENUH MAKNA.”
           </h2>
-          <div class="max-w-xl text-sm md:text-base space-y-4">
-            <p class="hidden md:block text-center">
-              Setiap detil dalam hidupmu layak untuk diabadikan. Kami percaya bahwa setiap momen,
-              sekecil apapun, memiliki cerita yang ingin dikenang. Mari bersama-sama menciptakan
-              foto-foto yang tak hanya indah, tetapi juga bermakna.
+          <div class="max-w-md text-sm md:text-base space-y-4 text-center md:text-left">
+            <p class="text-gray-200">
+              Setiap detil dalam hidupmu layak untuk diabadikan. Mari bersama-sama menciptakan
+              foto-foto yang tak hanya indah, tetapi juga bermakna dan tak ternilai.
             </p>
-            <div class="flex justify-center">
+            <div class="flex justify-center md:justify-start">
               <a
                 href="#"
-                class="inline-flex gap-2 px-6 py-2 text-white uppercase tracking-wide font-semibold group transition justify-center"
+                class="inline-flex gap-2 px-6 py-2 text-white uppercase tracking-wide font-semibold group transition"
               >
                 <span
-                  class="inline-flex items-center gap-2 border-b border-white group-hover:border-transparent transition"
+                  class="inline-flex items-center gap-2 border-b-2 border-brand-accent-gold group-hover:border-transparent transition-colors duration-300"
                 >
                   BOOK NOW
                   <svg
-                    class="w-4 h-4 text-brand-accent-gold"
+                    class="w-5 h-5 text-brand-accent-gold"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    stroke-width="2.5"
                   >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
+                      d="M13 7l5 5-5 5M6 12h12"
                     />
                   </svg>
                 </span>
@@ -64,103 +51,120 @@
       </div>
     </div>
 
-    <!-- Main Footer -->
-    <div
-      class="bg-black text-white px-6 md:px-12 py-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 border-b border-gray-700"
-    >
-      <!-- Logo & Links -->
-      <div>
-        <!-- Logo Image -->
-        <img src="/src/assets/logo.svg" alt="Adivarna Studio Logo" class="h-10 mb-6" />
+    <div class="bg-black text-white">
+      <div class="container mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 border-b border-gray-800">
+        <div>
+          <img src="/src/assets/logo.svg" alt="Adivarna Studio Logo" class="h-10 mb-8" />
 
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <h4 class="font-semibold mb-2">Informasi</h4>
-            <ul class="space-y-1 text-sm text-gray-300">
-              <li><a href="#" class="hover:text-white">Beranda</a></li>
-              <li><a href="#" class="hover:text-white">Our Service</a></li>
-              <li><a href="#" class="hover:text-white">Our Project</a></li>
-            </ul>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold mb-3 tracking-wider">Informasi</h4>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="#" class="hover:text-brand-accent-gold transition-colors">Beranda</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-brand-accent-gold transition-colors">Our Service</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-brand-accent-gold transition-colors">Our Project</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-3 tracking-wider">Dukungan</h4>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a href="#" class="hover:text-brand-accent-gold transition-colors"
+                    >Tentang Kami</a
+                  >
+                </li>
+                <li><a href="#" class="hover:text-brand-accent-gold transition-colors">FAQ</a></li>
+                <li>
+                  <a href="#" class="hover:text-brand-accent-gold transition-colors"
+                    >Syarat & Ketentuan</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4 class="font-semibold mb-2">Dukungan</h4>
-            <ul class="space-y-1 text-sm text-gray-300">
-              <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
-              <li><a href="#" class="hover:text-white">FAQ</a></li>
-              <li><a href="#" class="hover:text-white">Syarat & Ketentuan</a></li>
-            </ul>
+
+          <div class="flex gap-4 mt-8">
+            <a href="#" class="bg-white p-2 rounded-full hover:opacity-80 transition">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.04C6.5 2.04 2 6.53 2 12s4.5 9.96 10 9.96c5.5 0 10-4.46 10-9.96S17.5 2.04 12 2.04zm3.5 8.46h-2.25V17h-3V10.5H8.5v-2.5h1.75V6.45c0-1.77 1.08-2.75 2.67-2.75h2.08v2.5h-1.4c-.85 0-1.01.4-1.01.99v1.31h2.43l-.38 2.5z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="bg-white p-2 rounded-full hover:opacity-80 transition">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.74.85-2.71 1.04C18.4 4.31 17.01 3.75 15.5 3.75c-2.81 0-5.08 2.27-5.08 5.08 0 .4.05.78.13 1.15-4.23-.21-7.98-2.24-10.49-5.32-.44.75-.69 1.62-.69 2.55 0 1.76.9 3.32 2.27 4.22-.83-.03-1.62-.26-2.3-.64v.06c0 2.46 1.75 4.51 4.08 4.98-.43.12-.88.18-1.35.18-.33 0-.65-.03-.96-.09.65 2.02 2.53 3.48 4.76 3.52-1.74 1.36-3.93 2.18-6.32 2.18-.41 0-.81-.02-1.21-.07 2.25 1.45 4.93 2.3 7.76 2.3 9.31 0 14.4-7.72 14.4-14.4 0-.22 0-.44-.01-.66.99-.71 1.84-1.6 2.53-2.62z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="bg-white p-2 rounded-full hover:opacity-80 transition">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm4.4 3.6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm4.7-3.3c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1 1.1-.5 1.1-1.1-.5-1.1-1.1-1.1z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Social Media SVG -->
-        <div class="flex gap-3 mt-6">
-          <a href="#" class="bg-white p-2 rounded hover:opacity-80 transition">
-            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M22,12A10,10 0 1,0 12,22A10,10 0 0,0 22,12M10,17V13H8V10H10V8.5C10,6.57 11.57,5 13.5,5H16V8H14.5C14.22,8 14,8.22 14,8.5V10H16L15.5,13H14V17H10Z"
-              />
+        <div class="mt-8 md:mt-0">
+          <h3 class="text-3xl font-bold mb-6 flex items-center justify-between">
+            Yuk, Hubungi Kami!
+            <svg
+              class="w-10 h-10 text-gray-600 hidden md:block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7l10 10M17 7v10H7" />
             </svg>
-          </a>
-          <a href="#" class="bg-white p-2 rounded hover:opacity-80 transition">
-            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.28 4.28 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.71 1.04 4.28 4.28 0 0 0-7.38 3.9 12.13 12.13 0 0 1-8.8-4.46 4.28 4.28 0 0 0 1.32 5.7A4.24 4.24 0 0 1 2.8 9.7v.05a4.28 4.28 0 0 0 3.44 4.2 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 3.99 2.96A8.59 8.59 0 0 1 2 19.54a12.1 12.1 0 0 0 6.56 1.92c7.88 0 12.2-6.54 12.2-12.21v-.56A8.67 8.67 0 0 0 24 5.34a8.47 8.47 0 0 1-2.54.7Z"
-              />
-            </svg>
-          </a>
-          <a href="#" class="bg-white p-2 rounded hover:opacity-80 transition">
-            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M7.75,2A5.75,5.75 0 0,0 2,7.75V16.25A5.75,5.75 0 0,0 7.75,22H16.25A5.75,5.75 0 0,0 22,16.25V7.75A5.75,5.75 0 0,0 16.25,2H7.75M12,7A5,5 0 1,1 7,12A5,5 0 0,1 12,7M18,5.5A1.5,1.5 0 1,1 16.5,7A1.5,1.5 0 0,1 18,5.5Z"
-              />
-            </svg>
-          </a>
+          </h3>
+
+          <ul class="text-gray-300 divide-y divide-gray-800">
+            <li class="py-4">
+              <span class="block font-light text-sm text-gray-400">Email</span>
+              <p class="font-normal text-xl md:text-2xl text-white mt-1">hello@adiwarna.co</p>
+            </li>
+            <li class="py-4">
+              <span class="block font-light text-sm text-gray-400">Telepon</span>
+              <p class="font-normal text-xl md:text-2xl text-white mt-1">0812 3456 7890</p>
+            </li>
+            <li class="py-4">
+              <span class="block font-light text-sm text-gray-400">Alamat</span>
+              <p class="font-normal text-xl md:text-2xl text-white mt-1 leading-snug">
+                123 Anywhere St., Any City, 12345
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- Contact Section -->
-      <div class="pl-0 md:pl-6 mt-6 md:mt-0">
-        <h3 class="text-3xl font-bold mb-6 flex items-center justify-between">
-          Yuk, Hubungi Kami!
-          <svg
-            class="w-10 h-10 text-gray-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 7l10 10M17 7v10H7" />
-          </svg>
-        </h3>
-
-        <ul class="text-sm text-gray-300 divide-y divide-gray-700">
-          <li class="py-3">
-            <span class="block font-light text-[14px] leading-none">Email</span>
-            <p class="font-normal text-[24px] leading-none text-white">hello@adiwarna.co</p>
-          </li>
-          <li class="py-3">
-            <span class="block font-light text-[14px] leading-none">Telepon</span>
-            <p class="font-normal text-[24px] leading-none text-white">0812 3456 7890</p>
-          </li>
-          <li class="py-3">
-            <span class="block font-light text-[14px] leading-none">Alamat</span>
-            <p class="font-normal text-[24px] leading-none text-white">
-              123 Anywhere St., Any City, 12345 Any State
-            </p>
-          </li>
-        </ul>
+      <div class="bg-black">
+        <div class="container mx-auto px-6 text-center text-xs text-gray-500 py-6">
+          Copyright © 2025 ADIWERNA STUDIO | All Rights Reserved
+        </div>
       </div>
-    </div>
-
-    <!-- Copyright -->
-    <div class="text-center text-xs text-white py-4 bg-black">
-      Copyright © 2025 BCB Tech | All Rights Reserved
     </div>
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+const text_brand_accent_gold = '#cfaa3b' // defined for use in style bindings if needed
+</script>
 
 <style scoped>
-/* Tambahan jika ingin kustom font/icon */
+.text-brand-accent-gold {
+  color: #cfaa3b;
+}
+.border-brand-accent-gold {
+  border-color: #cfaa3b;
+}
 </style>

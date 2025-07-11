@@ -2,14 +2,80 @@
   <div class="text-black bg-white">
     <div class="">
       <template v-if="project">
+        <section class="text-white bg-black py-24 md:py-20">
+          <div class="container mx-auto px-6 grid md:grid-cols-2 gap-x-16 items-start">
+            <div class="space-y-6">
+              <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                <h1 class="text-3xl md:text-5xl font-light leading-tight">{{ project.title }}</h1>
+                <svg
+                  class="w-14 h-14 md:w-20 md:h-20 text-brand-accent-gold mt-2 md:mt-0 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 7l10 10M17 7v10H7" />
+                </svg>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <p class="font-semibold text-white">Klien</p>
+                  <p class="text-gray-300">{{ project.client }}</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-white">Tanggal</p>
+                  <p class="text-gray-300">{{ project.date }}</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-white">Lokasi</p>
+                  <p class="text-gray-300">{{ project.location }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full mt-6 md:mt-0">
+              <img
+                :src="project.image"
+                :alt="project.title"
+                class="w-full h-56 md:h-[400px] object-cover"
+                style="border-radius: 0"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white py-16 lg:py-24">
+          <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 items-stretch rounded-none m-0 gap-4 md:gap-0">
+              <img
+                :src="project.studio.image"
+                :alt="project.title"
+                class="w-full h-48 md:h-full object-cover rounded-none grayscale"
+                style="min-height: 160px; max-height: 400px"
+              />
+              <div
+                class="flex flex-col justify-center p-4 md:p-8"
+                style="min-height: 160px; max-height: 400px"
+              >
+                <h3 class="font-bold text-black mb-2 tracking-widest">
+                  {{ project.studio.name }}
+                </h3>
+                <p class="text-gray-800 leading-relaxed">{{ project.studio.description }}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section
-          class="text-white bg-black grid md:grid-cols-2 gap-x-16 items-start pt-24 pb-6 md:pt-20 md:pb-20 mx-auto px-4 md:px-6"
+          v-if="project.galleryImages && project.galleryImages.length > 0"
+          class="py-16 lg:py-24 bg-black text-white rounded-none"
         >
-          <div class="space-y-6">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-              <h1 class="text-3xl md:text-5xl font-light leading-tight">{{ project.title }}</h1>
+          <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-10 gap-4">
+              <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left">
+                MOMEN–MOMEN BERHARGA
+              </h2>
               <svg
-                class="w-14 h-14 md:w-20 md:h-20 text-brand-accent-gold mt-2 md:mt-0"
+                class="w-8 h-8 md:w-10 md:h-10 text-brand-accent-gold"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -18,119 +84,54 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 7l10 10M17 7v10H7" />
               </svg>
             </div>
-            <div class="space-y-4">
-              <div>
-                <p class="font-semibold text-white">Klien</p>
-                <p class="text-gray-300">{{ project.client }}</p>
-              </div>
-              <div>
-                <p class="font-semibold text-white">Tanggal</p>
-                <p class="text-gray-300">{{ project.date }}</p>
-              </div>
-              <div>
-                <p class="font-semibold text-white">Lokasi</p>
-                <p class="text-gray-300">{{ project.location }}</p>
-              </div>
-            </div>
-          </div>
-          <div class="w-full mt-6 md:mt-0">
-            <img
-              :src="project.image"
-              :alt="project.title"
-              class="w-full h-56 md:h-[400px] object-cover"
-              style="border-radius: 0"
-            />
-          </div>
-        </section>
-
-        <section
-          class="grid md:grid-cols-2 items-stretch bg-white rounded-none p-4 md:p-10 m-0 gap-4 md:gap-0"
-        >
-          <img
-            :src="project.studio.image"
-            :alt="project.title"
-            class="w-full h-48 md:h-full object-cover rounded-none grayscale"
-            style="min-height: 160px; max-height: 400px"
-          />
-          <div
-            class="flex flex-col justify-center p-4 md:p-8"
-            style="min-height: 160px; max-height: 400px"
-          >
-            <h3 class="font-bold text-black mb-2 tracking-widest">
-              {{ project.studio.name }}
-            </h3>
-            <p class="text-gray-800 leading-relaxed">{{ project.studio.description }}</p>
-          </div>
-        </section>
-        <section
-          v-if="project.galleryImages && project.galleryImages.length > 0"
-          class="p-4 md:p-10 bg-black text-white rounded-none"
-        >
-          <div class="flex flex-col md:flex-row items-center justify-between mb-6 md:mb-10 gap-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left">
-              MOMEN–MOMEN BERHARGA
-            </h2>
-            <svg
-              class="w-8 h-8 md:w-10 md:h-10 text-brand-accent-gold"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7l10 10M17 7v10H7" />
-            </svg>
-          </div>
-          <div class="flex flex-col md:flex-row gap-4 h-auto md:h-[500px]">
-            <!-- Kiri: Gambar besar -->
-            <div class="md:flex-[3]">
-              <img
-                v-if="project.galleryImages[0]"
-                :src="project.galleryImages[0].src"
-                :alt="project.galleryImages[0].alt"
-                class="w-full h-48 md:h-full object-cover rounded-lg mb-4 md:mb-0"
-              />
-            </div>
-
-            <!-- Kanan: 2 atas + 1 bawah -->
-            <div class="md:flex-[2] flex flex-col gap-4">
-              <!-- Dua gambar di baris atas -->
-              <div class="flex gap-4 h-24 md:h-[245px] mb-4 md:mb-0">
+            <div class="flex flex-col md:flex-row gap-4 h-auto md:h-[500px]">
+              <div class="md:flex-[3]">
                 <img
-                  v-if="project.galleryImages[1]"
-                  :src="project.galleryImages[1].src"
-                  :alt="project.galleryImages[1].alt"
-                  class="w-1/2 h-full object-cover rounded-lg"
-                />
-                <img
-                  v-if="project.galleryImages[2]"
-                  :src="project.galleryImages[2].src"
-                  :alt="project.galleryImages[2].alt"
-                  class="w-1/2 h-full object-cover rounded-lg"
+                  v-if="project.galleryImages[0]"
+                  :src="project.galleryImages[0].src"
+                  :alt="project.galleryImages[0].alt"
+                  class="w-full h-48 md:h-full object-cover rounded-lg mb-4 md:mb-0"
                 />
               </div>
 
-              <!-- Gambar bawah penuh -->
-              <img
-                v-if="project.galleryImages[3]"
-                :src="project.galleryImages[3].src"
-                :alt="project.galleryImages[3].alt"
-                class="w-full h-24 md:h-[245px] object-cover rounded-lg"
-              />
+              <div class="md:flex-[2] flex flex-col gap-4">
+                <div class="flex gap-4 h-24 md:h-[245px] mb-4 md:mb-0">
+                  <img
+                    v-if="project.galleryImages[1]"
+                    :src="project.galleryImages[1].src"
+                    :alt="project.galleryImages[1].alt"
+                    class="w-1/2 h-full object-cover rounded-lg"
+                  />
+                  <img
+                    v-if="project.galleryImages[2]"
+                    :src="project.galleryImages[2].src"
+                    :alt="project.galleryImages[2].alt"
+                    class="w-1/2 h-full object-cover rounded-lg"
+                  />
+                </div>
+
+                <img
+                  v-if="project.galleryImages[3]"
+                  :src="project.galleryImages[3].src"
+                  :alt="project.galleryImages[3].alt"
+                  class="w-full h-24 md:h-[245px] object-cover rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         <section
           v-if="project.testimonial && project.testimonial.quote"
-          class="relative py-10 md:py-16 mt-6 md:mt-10 mb-6 md:mb-10"
+          class="relative py-16 lg:py-24"
           :style="
             project.testimonial.image
-              ? `background-image: url('${project.testimonial.image}'); background-size: cover; background-position: center; margin-top: 5%; margin-bottom: 5%;`
+              ? `background-image: url('${project.testimonial.image}'); background-size: cover; background-position: center;`
               : ''
           "
         >
           <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-          <div class="relative max-w-7xl mx-auto flex justify-end z-10">
+          <div class="relative container mx-auto px-6 flex justify-end z-10">
             <div class="w-full md:w-1/2 text-right">
               <h2 class="text-2xl md:text-4xl font-light mb-4 text-right text-white">
                 KATA MEREKA
