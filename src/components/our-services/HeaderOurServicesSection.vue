@@ -1,12 +1,10 @@
-<!-- src/components/projects/HeaderProjectSection.vue -->
+<!-- src/components/our-services/HeaderOurServiceSection.vue -->
 <template>
   <section class="bg-black text-white py-20 lg:py-32">
     <div class="container mx-auto px-6">
       <!-- Header Section -->
       <div class="flex justify-between items-baseline border-b border-gray-700 pb-4 mb-8">
-        <h2 class="text-4xl lg:text-5xl font-light tracking-wider">
-          CERITA MEREKA, DALAM FOTO KAMI
-        </h2>
+        <h2 class="text-4xl lg:text-5xl font-light">MOMEN SPESIAL LAYANAN SPESIAL</h2>
         <svg
           class="w-10 h-10 text-brand-accent-gold"
           fill="none"
@@ -21,7 +19,7 @@
       <!-- Gambar Utama -->
       <div class="w-full h-[60vh] bg-gray-800">
         <img
-          src="https://hellostoryteller.com/wp-content/uploads/2021/05/HSbnw1.jpg"
+          src="https://png.pngtree.com/background/20230606/original/pngtree-mannequins-in-a-dark-room-picture-image_2885069.jpg"
           alt="Tim Adiwarna Studio"
           class="w-full h-full object-cover"
         />

@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AboutView from '../views/AboutView.vue' // Pastikan ini diimpor
+import FindUsView from '../views/FindUsView.vue' // Pastikan ini diimpor
 import HomeView from '../views/HomeView.vue'
+import OurProjectView from '../views/OurProjectView.vue' // Pastikan ini diimpor
+import OurServiceView from '../views/OurServiceView.vue' // Pastikan ini diimpor
+import ProjectDetailView from '../views/ProjectDetailView.vue'
 // --- TAMBAHKAN BLOK INI ---
 
 const router = createRouter({
@@ -28,12 +32,22 @@ const router = createRouter({
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('../views/OurProjectView.vue'), // Menggunakan lazy loading
+      component: OurProjectView, // Menggunakan lazy loading
     },
     {
       path: '/projects/:slug',
       name: 'project-detail',
-      component: () => import('../views/ProjectDetailView.vue'), // atau ../views/projects/ProjectDetailView.vue tergantung struktur kamu
+      component: ProjectDetailView, // atau ../views/projects/ProjectDetailView.vue tergantung struktur kamu
+    },
+    {
+      path: '/services',
+      name: 'services',
+      component: OurServiceView, // Menggunakan lazy loading
+    },
+    {
+      path: '/find-us',
+      name: 'find-us',
+      component: FindUsView, // Menggunakan lazy loading
     },
   ],
 })
