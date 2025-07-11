@@ -15,6 +15,16 @@ const router = createRouter({
       name: 'about',
       component: AboutView, // <-- Mengarah ke halaman yang benar
     },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: () => import('../views/OurProjectView.vue'), // Menggunakan lazy loading
+    },
+    {
+      path: '/projects/:slug',
+      name: 'project-detail',
+      component: () => import('../views/ProjectDetailView.vue'), // atau ../views/projects/ProjectDetailView.vue tergantung struktur kamu
+    },
   ],
 })
 
