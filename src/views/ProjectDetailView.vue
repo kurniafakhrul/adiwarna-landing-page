@@ -3,7 +3,7 @@
     <div class="">
       <template v-if="project">
         <section
-          class="text-white bg-black grid md:grid-cols-2 gap-x-16 items-start p-6 md:p-20 mx-auto px-4 md:px-6"
+          class="text-white bg-black grid md:grid-cols-2 gap-x-16 items-start pt-24 pb-6 md:pt-20 md:pb-20 mx-auto px-4 md:px-6"
         >
           <div class="space-y-6">
             <div class="flex flex-col md:flex-row justify-between items-start gap-4">
@@ -159,8 +159,8 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { ref, onMounted } from 'vue'
 
 const allProjects = [
   {

@@ -1,8 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue' // Pastikan ini diimpor
+import HomeView from '../views/HomeView.vue'
+// --- TAMBAHKAN BLOK INI ---
 
 const router = createRouter({
+  scrollBehavior(to, from, savedPosition) {
+    // Jika ada posisi scroll yang tersimpan (misalnya saat menekan tombol back/forward browser),
+    // gunakan posisi tersebut.
+    if (savedPosition) {
+      return savedPosition
+    }
+    // Jika tidak, selalu scroll ke paling atas.
+    return { top: 0 }
+  },
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
