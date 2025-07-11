@@ -105,7 +105,7 @@ onUnmounted(() => {
                   Temukan Kami
                 </router-link>
                 <router-link
-                  to="/syarat-ketentuan"
+                  to="/policy"
                   @click="isLainnyaOpen = false"
                   class="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-brand-accent-gold"
                 >

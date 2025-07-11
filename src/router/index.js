@@ -4,6 +4,7 @@ import FindUsView from '../views/FindUsView.vue' // Pastikan ini diimpor
 import HomeView from '../views/HomeView.vue'
 import OurProjectView from '../views/OurProjectView.vue' // Pastikan ini diimpor
 import OurServiceView from '../views/OurServiceView.vue' // Pastikan ini diimpor
+import PolicyView from '../views/PolicyView.vue' // Pastikan ini diimpor
 import ProjectDetailView from '../views/ProjectDetailView.vue'
 // --- TAMBAHKAN BLOK INI ---
 
@@ -48,6 +49,12 @@ const router = createRouter({
       path: '/find-us',
       name: 'find-us',
       component: FindUsView, // Menggunakan lazy loading
+    },
+
+    {
+      path: '/policy',
+      name: 'policy',
+      component: PolicyView, // Menggunakan lazy loading
     },
   ],
 })
