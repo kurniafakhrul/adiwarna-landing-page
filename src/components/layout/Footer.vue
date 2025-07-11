@@ -66,7 +66,7 @@
 
     <!-- Main Footer -->
     <div
-      class="bg-black text-white px-6 md:px-20 py-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 border-b border-gray-700"
+      class="bg-black text-white px-6 md:px-12 py-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 border-b border-gray-700"
     >
       <!-- Logo & Links -->
       <div>
