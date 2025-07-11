@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AboutView from '../views/AboutView.vue' // Pastikan ini diimpor
+import FAQView from '../views/FAQView.vue' // Pastikan ini diimpor
 import FindUsView from '../views/FindUsView.vue' // Pastikan ini diimpor
 import HomeView from '../views/HomeView.vue'
 import OurProjectView from '../views/OurProjectView.vue' // Pastikan ini diimpor
@@ -55,6 +56,11 @@ const router = createRouter({
       path: '/policy',
       name: 'policy',
       component: PolicyView, // Menggunakan lazy loading
+    },
+    {
+      path: '/faq',
+      name: 'faq',
+      component: FAQView, // Menggunakan lazy loading
     },
   ],
 })
