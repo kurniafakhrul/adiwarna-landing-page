@@ -63,10 +63,10 @@ const packagesDB = [
 ]
 
 const bookingService = {
-  async getBookings() {
+  async getPackages() {
+    // Ganti nama fungsi ini
     await new Promise((r) => setTimeout(r, 300))
     return packagesDB
   },
 }
-
 export default bookingService

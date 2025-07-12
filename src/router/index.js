@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import AboutView from '../views/AboutView.vue' // Pastikan ini diimpor
 import FAQView from '../views/FAQView.vue' // Pastikan ini diimpor
 import FindUsView from '../views/FindUsView.vue' // Pastikan ini diimpor
@@ -7,6 +8,10 @@ import OurProjectView from '../views/OurProjectView.vue' // Pastikan ini diimpor
 import OurServiceView from '../views/OurServiceView.vue' // Pastikan ini diimpor
 import PolicyView from '../views/PolicyView.vue' // Pastikan ini diimpor
 import ProjectDetailView from '../views/ProjectDetailView.vue'
+import ScheduleView from '../views/ScheduleView.vue'
+import BookingView from '../views/BookingView.vue'
+import CheckOutView from '@/views/CheckOutView.vue'
+
 // --- TAMBAHKAN BLOK INI ---
 
 const router = createRouter({
@@ -89,7 +94,23 @@ const router = createRouter({
     {
       path: '/booking',
       name: 'booking',
-      component: () => import('../views/BookingView.vue'), // Menggunakan lazy loading
+      component: BookingView,
+      meta: {
+        layout: 'booking-layout', // Tambahkan judul untuk halaman ini
+      },
+    },
+    {
+      path: '/schedule',
+      name: 'schedule',
+      component: ScheduleView,
+      meta: {
+        layout: 'booking-layout', // Tambahkan judul untuk halaman ini
+      },
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: CheckOutView,
       meta: {
         layout: 'booking-layout', // Tambahkan judul untuk halaman ini
       },

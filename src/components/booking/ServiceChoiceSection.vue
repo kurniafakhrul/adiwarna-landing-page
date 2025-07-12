@@ -2,7 +2,9 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useBookingStore } from '@/stores/bookingStore'
+import { useRouter } from 'vue-router' // ✅ tambahkan ini
 
+const router = useRouter() // ✅ tambahkan ini
 // --- STATE MANAGEMENT ---
 const bookingStore = useBookingStore()
 const step = ref(1)
@@ -52,6 +54,15 @@ function selectCategory(category) {
 function selectPackage(packageId) {
   selectedPackageId.value = packageId
   step.value = 3
+}
+
+function proceedToSchedule() {
+  if (selectedPackageDetails.value) {
+    // Simpan pilihan ke store
+    bookingStore.selectPackageForBooking(selectedPackageDetails.value)
+    // Arahkan ke halaman jadwal
+    router.push('/schedule')
+  }
 }
 
 function goBack() {
@@ -111,13 +122,19 @@ const formatCurrency = (value) => {
               <h3 class="text-2xl font-light text-brand-accent-gold">
                 {{ selectedLocation || 'STUDIO (INDOOR)' }}
               </h3>
-              <p class="text-sm text-black mt-2">
-                {{
-                  selectedLocation === 'Outdoor'
-                    ? 'Foto di luar ruangan...'
-                    : 'Foto di dalam ruangan...'
-                }}
-              </p>
+              <p class="text-sm text-black mt-2">Foto di dalam ruangan atau studio, seperti:</p>
+              <div class="grid grid-cols-2 gap-x-4 text-sm text-black mt-4">
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Pre-Wedding</li>
+                  <li>Graduation</li>
+                  <li>Maternity</li>
+                </ul>
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Family Session</li>
+                  <li>Pas Foto (Siswa/Pranikah)</li>
+                  <li>Self Foto (Grup/Couple)</li>
+                </ul>
+              </div>
               <button
                 v-if="step === 1"
                 @click="selectLocation('Indoor')"
@@ -150,7 +167,19 @@ const formatCurrency = (value) => {
               </div>
               <div class="mt-6">
                 <h3 class="text-2xl font-light text-brand-accent-gold">OUTDOOR</h3>
-                <p class="text-sm text-black mt-2">Foto di luar ruangan...</p>
+                <p class="text-sm text-black mt-2">
+                  Foto di luar ruangan dengan latar belakang alam atau tempat terbuka, seperti:
+                </p>
+                <div class="grid grid-cols-2 gap-x-4 text-sm text-black mt-4">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Graduation</li>
+                    <li>Pre-Wedding</li>
+                  </ul>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Wedding</li>
+                    <li>Engagement</li>
+                  </ul>
+                </div>
                 <button
                   @click="selectLocation('Outdoor')"
                   class="w-full mt-6 py-4 bg-black text-white font-semibold hover:opacity-90"
@@ -232,7 +261,10 @@ const formatCurrency = (value) => {
                 />
               </div>
               <div class="flex-grow"></div>
-              <button class="w-full py-4 bg-black text-white font-semibold hover:opacity-90">
+              <button
+                @click="proceedToSchedule"
+                class="w-full py-4 bg-black text-white font-semibold hover:opacity-90 transition-opacity"
+              >
                 LANJUTKAN PEMESANAN
               </button>
             </div>
