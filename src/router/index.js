@@ -25,42 +25,74 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
     {
       path: '/about', // <-- Rute ini
       name: 'about',
       component: AboutView, // <-- Mengarah ke halaman yang benar
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
     {
       path: '/projects',
       name: 'projects',
       component: OurProjectView, // Menggunakan lazy loading
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
     {
       path: '/projects/:slug',
       name: 'project-detail',
       component: ProjectDetailView, // atau ../views/projects/ProjectDetailView.vue tergantung struktur kamu
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
     {
       path: '/services',
       name: 'services',
       component: OurServiceView, // Menggunakan lazy loading
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
     {
       path: '/find-us',
       name: 'find-us',
       component: FindUsView, // Menggunakan lazy loading
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
 
     {
       path: '/policy',
       name: 'policy',
       component: PolicyView, // Menggunakan lazy loading
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
     },
     {
       path: '/faq',
       name: 'faq',
       component: FAQView, // Menggunakan lazy loading
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
+    },
+    {
+      path: '/booking',
+      name: 'booking',
+      component: () => import('../views/BookingView.vue'), // Menggunakan lazy loading
+      meta: {
+        layout: 'booking-layout', // Tambahkan judul untuk halaman ini
+      },
     },
   ],
 })

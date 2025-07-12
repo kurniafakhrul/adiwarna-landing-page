@@ -1,13 +1,23 @@
-<!-- src/App.vue -->
 <script setup>
-import Footer from '@/components/layout/Footer.vue'
-import Navbar from '@/components/layout/Navbar.vue'
-import { RouterView } from 'vue-router'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import DefaultLayout from '@/layouts/LandingPageLayout.vue'
+import BookingLayout from '@/layouts/BookingLayout.vue'
+
+const route = useRoute()
+
+// Pilih layout berdasarkan meta `layout`
+const layout = computed(() => {
+  switch (route.meta.layout) {
+    case 'booking-layout':
+      return BookingLayout
+    case 'default':
+    default:
+      return DefaultLayout
+  }
+})
 </script>
 
 <template>
-  <Navbar />
-  <RouterView />
-  <Footer />
-  <!-- Footer bisa ditambahkan di sini nanti -->
+  <component :is="layout" />
 </template>

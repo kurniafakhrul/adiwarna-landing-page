@@ -1,62 +1,6 @@
 <template>
   <footer class="bg-black text-white">
     <!-- === SECTION 1: CTA === -->
-    <section class="relative text-white overflow-hidden py-20 lg:py-32">
-      <!-- Background split: atas putih, bawah hitam -->
-      <div class="absolute inset-0 z-0">
-        <div class="w-full h-1/2 bg-white"></div>
-        <div class="w-full h-1/2 bg-black"></div>
-      </div>
-
-      <!-- Background Image -->
-      <img
-        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1600"
-        alt="Background"
-        class="absolute inset-0 w-full h-full object-cover z-10 p-10"
-      />
-
-      <!-- Konten -->
-      <div class="relative z-20 container mx-auto px-20">
-        <div class="grid md:grid-cols-2 gap-12 items-center lg:text-center md:text-center">
-          <h2 class="text-3xl md:text-4xl font-semibold italic leading-snug lg:text-center">
-            “SETIAP MOMEN — <br />PENUH MAKNA.”
-          </h2>
-
-          <div class="space-y-4">
-            <p class="hidden md:block text-sm md:text-base lg:text-center md:text-center">
-              Setiap detil dalam hidupmu layak untuk diabadikan. Kami percaya bahwa setiap momen,
-              sekecil apapun, memiliki cerita yang ingin dikenang. Mari bersama-sama menciptakan
-              foto-foto yang tak hanya indah, tetapi juga bermakna.
-            </p>
-            <div class="flex justify-center md:justify-center lg:justify-center">
-              <a
-                href="#"
-                class="inline-flex gap-2 px-6 py-2 text-white uppercase tracking-wide font-semibold group transition justify-center"
-              >
-                <span
-                  class="inline-flex items-center gap-2 border-b border-white group-hover:border-transparent transition"
-                >
-                  BOOK NOW
-                  <svg
-                    class="w-4 h-4 text-brand-accent-gold"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- === SECTION 2: MAIN FOOTER === -->
     <section class="bg-black text-white py-20 lg:py-32 border-t border-gray-800">
