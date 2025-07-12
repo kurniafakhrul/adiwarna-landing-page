@@ -98,6 +98,12 @@ onUnmounted(() => {
                 class="absolute top-full left-0 mt-2 w-56 bg-black bg-opacity-90 rounded-md shadow-lg py-2 z-40"
               >
                 <router-link
+                  to="/check-order"
+                  @click="isLainnyaOpen = false"
+                  class="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-brand-accent-gold"
+                  >Cek Pesanan
+                </router-link>
+                <router-link
                   to="/find-us"
                   @click="isLainnyaOpen = false"
                   class="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-brand-accent-gold"
@@ -165,8 +171,15 @@ onUnmounted(() => {
           <router-link to="/services" class="nav-link text-white" @click="closeMenu">
             Our Services
           </router-link>
+          <router-link to="/check-order" class="nav-link text-white" @click="closeMenu">
+            Cek Pesanan
+          </router-link>
 
-          <router-link to="/syarat-ketentuan" class="nav-link text-white" @click="closeMenu">
+          <router-link to="/find-us" class="nav-link text-white" @click="closeMenu">
+            Temukan Kami
+          </router-link>
+
+          <router-link to="/policy" class="nav-link text-white" @click="closeMenu">
             Syarat dan Ketentuan
           </router-link>
           <router-link to="/faq" class="nav-link text-white" @click="closeMenu"> FAQ </router-link>

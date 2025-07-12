@@ -11,7 +11,8 @@ import ProjectDetailView from '../views/ProjectDetailView.vue'
 import ScheduleView from '../views/ScheduleView.vue'
 import BookingView from '../views/BookingView.vue'
 import CheckOutView from '@/views/CheckOutView.vue'
-
+import CheckOrderView from '@/views/CheckOrderView.vue'
+import OrderDetailView from '@/views/OrderDetailView.vue'
 // --- TAMBAHKAN BLOK INI ---
 
 const router = createRouter({
@@ -113,6 +114,22 @@ const router = createRouter({
       component: CheckOutView,
       meta: {
         layout: 'booking-layout', // Tambahkan judul untuk halaman ini
+      },
+    },
+    {
+      path: '/check-order',
+      name: 'check-order',
+      component: CheckOrderView,
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
+      },
+    },
+    {
+      path: '/detail-order',
+      name: 'detail-order',
+      component: OrderDetailView,
+      meta: {
+        layout: 'default', // Tambahkan judul untuk halaman ini
       },
     },
   ],
