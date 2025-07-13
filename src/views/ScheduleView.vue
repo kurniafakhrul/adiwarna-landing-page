@@ -174,15 +174,6 @@ function getCellClass(date) {
 </script>
 
 <style>
-.vuecal__cell {
-  padding: 10px !important;
-  cursor: pointer;
-  text-align: center;
-  color: black !important;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
 .vuecal__cell.selected,
 .vuecal__cell.vuecal__cell--selected {
   background-color: black !important;
